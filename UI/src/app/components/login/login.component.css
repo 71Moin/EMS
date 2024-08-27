@@ -1,0 +1,50 @@
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    mat-card {
+      max-width: 400px;
+      width: 100%;
+    }
+  .link-container{
+    margin-top: 3%;
+  }
+  .newuser{
+    margin-left: 51%;
+    cursor: pointer;
+  }
+  .forgot{
+    cursor: pointer;
+  }
+    .full-width {
+      width: 100%;
+    }
+  
+    form {
+      display: flex;
+      flex-direction: column;
+  
+      button {
+        margin-top: 16px;
+      }
+    }
+  }
+  #errmsg{
+    color: red;
+  }
+  .red-text {
+    color: red;
+  }
+  
+  .green-text {
+    color: green;
+  }
+  
+  .black-text {
+    color: black;
+  }
+  
+  
+  
+  

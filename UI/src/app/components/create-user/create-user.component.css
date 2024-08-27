@@ -1,0 +1,33 @@
+.new-user-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    mat-card {
+      max-width: 400px;
+      width: 100%;
+    }
+    .full-width {
+      width: 100%;
+    }
+  
+    form {
+      display: flex;
+      flex-direction: column;
+  
+      button {
+        margin-top: 16px;
+      }
+    }
+  }
+  .otpbutton {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+.left-button {
+  margin-right: auto;
+}
+
+.right-button {
+  margin-left: auto;
+}

@@ -1,0 +1,7 @@
+[    
+    {"id":"1","name": "Visa", "type": "Target System", "connectionMode": "Web Service", "jndi": "10.127.98.01", "end_point": "4365", "qname": "-", "man_pay": "Yes", "brn_pay": "Yes", "description": "Message"},
+    {"id":"2","name": "MasterCard", "type": "Target System", "connectionMode": "MQ", "jndi": "164.199.100.170", "end_point": "-", "qname": "A23B-SB7D", "man_pay": "No", "brn_pay": "Yes", "description": "Message"},
+    {"id":"3","name": "Amex", "type": "Source System", "connectionMode": "Web Service", "jndi": "68.59.179.13", "end_point": "4040", "qname": "-", "man_pay": "No", "brn_pay": "No", "description": "-"},
+    {"id":"4","name": "SPDH", "type": "Target System", "connectionMode": "Web Service", "jndi": "131.3.177.88", "end_point": "3360", "qname": "-", "man_pay": "Yes", "brn_pay": "No", "description": "Message"},
+    {"id":"5","name": "HPDH", "type": "Source System", "connectionMode": "MQ", "jndi": "204.175.33.10", "end_point": "-", "qname": "R7G6-88A7", "man_pay": "No", "brn_pay": "Yes", "description": "-"}
+ ]

@@ -1,0 +1,65 @@
+<main id="main" class="main">
+    <div class="pagetitle list_bread_btn">
+        <nav>
+            <ol class="breadcrumb list_brd">
+                <li class="breadcrumb-item active">Department</li>
+                <li class="breadcrumb-item active">Add</li>
+            </ol>
+        </nav>
+    </div>
+    <section class="section">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="card_header_main_list">
+                            <div class="row d_align_center">
+                                <div class="col-sm-4">
+                                    <h2 class="maintitlecard">
+                                        <span class="nav-label ng-binding">Add New Department</span>
+                                    </h2>
+                                </div>
+                            </div>
+                        </div>
+                        <form [formGroup]="addDeptForm" (ngSubmit)="onSubmit()">
+                            <div class="row mb-3">
+                                <div class="col-sm-6">
+                                    <label for="departmentName" class="form-label"><span class="estric">*</span> Department Name:</label>
+                                    <input type="text" class="form-control" formControlName="departmentName" placeholder="Enter Department Name">
+                                    <div class="text-danger">
+                                        <small *ngIf="addDeptForm.get('departmentName')?.hasError('required') && addDeptForm.get('departmentName')?.touched">
+                                            Department Name is required.
+                                        </small>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <label for="location" class="form-label"><span class="estric">*</span> Location:</label>
+                                    <input type="text" class="form-control" formControlName="location" placeholder="Enter Location">
+                                    <div class="text-danger">
+                                        <small *ngIf="addDeptForm.get('location')?.hasError('required') && addDeptForm.get('location')?.touched">
+                                            Location is required.
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="row mb-3">
+                                <div class="col-sm-4"></div>
+                                <div class="col-sm-4">
+                                    <button class="btn btn-primary w-100" type="submit">
+                                        Submit
+                                    </button>
+                                </div>
+                                <div class="col-sm-4">
+                                    <button (click)="onCancel()" class="btn btn-secondary w-100" type="button">
+                                        Cancel
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>

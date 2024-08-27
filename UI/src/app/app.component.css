@@ -1,0 +1,14 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .content-container {
+    margin-left: 250px; /* Adjust for sidebar width */
+    padding-bottom: 60px; /* Adjust for footer height */
+    overflow-y: auto;
+    height: calc(100vh - 60px); /* Adjust for footer height */
+  }
+  

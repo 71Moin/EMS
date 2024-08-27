@@ -1,0 +1,112 @@
+
+<div class="login">
+  <div class="login-container">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Login</mat-card-title>
+        <mat-card-subtitle *ngIf="isloginerr" id="errmsg">{{msg}}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <form (ngSubmit)="UserLogin()" #loginNgForm="ngForm" novalidate>
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Username" name="username" required [(ngModel)]="loginForm.username" #username="ngModel">
+            <mat-error *ngIf="username.invalid && (username.dirty || username.touched)">
+              <span *ngIf="username.errors?.['required']">Username is required</span>
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field class="full-width">
+            <input matInput type="password" placeholder="Password" name="password" required [(ngModel)]="loginForm.password" #password="ngModel">
+            <mat-error *ngIf="password.invalid && (password.dirty || password.touched)">
+              <span *ngIf="password.errors?.['required']">Password is required</span>
+            </mat-error>
+          </mat-form-field>
+          <button mat-raised-button color="primary" type="submit">Login</button>
+          <div class="link-container">
+            <a class="forgot"(click)="openModal(modalContent)" >Forgot Password</a>
+            <a class="newuser" (click)="userPopup()">New User</a>
+          </div>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+<ng-template #modalContent let-modal>
+  <div class="loader-overlay" *ngIf="spinner">
+    <div class="spinner"></div>
+  </div>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Forgot Password</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="closeModal()"></button>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="forgotPass">
+      <div class="row">
+        <div class="col-sm-12">
+          <label for="email" class="form-label"><span class="estric">*</span> Email:</label>
+          <input type="text" class="form-control" formControlName="email" placeholder="Enter Your Email">
+          <small class="text-danger" *ngIf="forgotPass.get('email')?.hasError('required') && forgotPass.get('email')?.touched">
+            Email is required.
+          </small>
+          <small  *ngIf="isOtpErr || isSentOtp"
+          [ngClass]="{
+            'red-text': isOtpErr,
+            'green-text': isSentOtp && !isOtpErr,
+            'black-text': !isOtpErr && !isSentOtp
+          }"
+          >{{otpMsgForgotPass}}</small>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <div *ngIf="isSentOtp && !isValidOtp">
+            <label for="otp" class="form-label"><span class="estric">*</span> OTP:</label>
+            <input type="text" class="form-control" formControlName="otp" placeholder="Enter OTP">
+            <small class="text-danger" *ngIf="forgotPass.get('otp')?.hasError('required') && forgotPass.get('otp')?.touched">
+              OTP is required.
+            </small>
+          </div>
+          <small *ngIf="isValidOtpErr || isValidOtp"
+          [ngClass]="{
+            'red-text': isValidOtpErr,
+            'green-text': isValidOtp && !isValidOtpErr,
+            'black-text': !isValidOtpErr && !isValidOtp
+          }"
+          >{{isValidOtpMsg}}</small>
+        </div>
+      </div>
+      <div class="row" *ngIf="isValidOtp">
+        <div class="col-sm-12">
+          <label for="password" class="form-label"><span class="estric">*</span> Enter Password:</label>
+          <input [type]="isPassVisible ? 'text' : 'password'" id="pass" class="form-control" formControlName="password" placeholder="Enter Your Password">
+          <span><a (click)="showPass('pass')"><i [ngClass]="isPassVisible ? 'fa fa-eye' : 'fa fa-eye-slash'"></i></a></span>
+          <small class="text-danger" *ngIf="forgotPass.get('password')?.hasError('required') && forgotPass.get('password')?.touched">
+            Password is required.
+          </small>
+          <small class="text-danger" *ngIf="forgotPass.get('password')?.hasError('minlength') && forgotPass.get('password')?.touched">
+            Minimum Length Should be 8 character
+          </small>
+        </div>
+      </div>
+      <div class="row" *ngIf="isValidOtp">
+        <div class="col-sm-12">
+          <label for="cnfPassword" class="form-label"><span class="estric">*</span> Confirm Password:</label>
+          <input [type]="isCnfPassVisible ? 'text' : 'password'" id="cnfpass" class="form-control" formControlName="cnfPassword" placeholder="Confirm Your Password">
+          <span><a (click)="showPass('cnfpass')"><i [ngClass]="isCnfPassVisible ? 'fa fa-eye' : 'fa fa-eye-slash'"></i></a></span>
+          <small class="text-danger" *ngIf="forgotPass.get('cnfPassword')?.hasError('required') && forgotPass.get('cnfPassword')?.touched">
+            Confirm Password is required.
+          </small>
+          <small class="text-danger" *ngIf="forgotPass.get('cnfPassword')?.hasError('mismatch') && forgotPass.get('cnfPassword')?.touched">
+            Password do not match
+          </small>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="closeModal()">Close</button>
+    <button type="button" class="btn btn-primary" (click)="sendOtp()" *ngIf="!isSentOtp">Send OTP</button>
+    <button type="button" class="btn btn-primary" (click)="validateOtp()" *ngIf="isSentOtp && !isValidOtp">Validate OTP</button>
+    <button type="button" class="btn btn-primary" (click)="updatePass()" *ngIf="isValidOtp" [disabled]="forgotPass.invalid">Update Password</button>
+  </div>
+</ng-template>
+

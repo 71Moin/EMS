@@ -1,0 +1,11 @@
+.footer {
+    position: fixed;
+    bottom: 0;
+    /* width: calc(100% - 250px);
+    left: 250px; */
+    width: 100%;
+    z-index: -1;
+    background-color: #343a40;
+    margin-left: 0px;
+  }
+  

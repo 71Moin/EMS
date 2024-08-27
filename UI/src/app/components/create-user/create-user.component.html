@@ -1,0 +1,65 @@
+<div class="loader-overlay" *ngIf="spinner">
+  <div class="spinner"></div>
+</div>
+<div class="new-user-container">
+    <mat-card> 
+      <mat-card-header>
+        <mat-card-title>Create A New Account</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <form [formGroup]="registerForm" (ngSubmit)="userRegister()">
+          <mat-form-field class="full-width">
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="Enter Your Email" id="username" formControlName="username">
+            <div class="text-danger" *ngIf="registerForm.get('username')?.hasError('required') && registerForm.get('username')?.touched">
+              Email is required.
+            </div>
+          </mat-form-field>
+          <small *ngIf="isgetOtp" class="text-success">{{otpMsg}}</small>
+          <input matInput *ngIf="isgetOtp" placeholder="Enter OTP" id="otp" formControlName="otp">
+          <div class="text-danger" *ngIf="registerForm.get('otp')?.hasError('required') && registerForm.get('otp')?.touched">
+            Otp is required.
+          </div>
+          <small *ngIf="isvalidotp" class="text-danger">{{validotpmsg}}</small>
+          <small *ngIf="boolOtpMsg" class="text-danger">{{otpMsg}}</small>
+          <small *ngIf="validOtp" class="text-success">{{validotpmsg}}</small>
+          <button mat-raised-button color="primary" type="button" *ngIf="!isgetOtp"  (click)="sendOtp()">Send OTP</button>
+          <div class="otpbutton" *ngIf="!openForm">
+            <button mat-raised-button color="primary" class="left-button" type="button" *ngIf="isgetOtp"  (click)="ValidateOtp()">Validate</button>
+            <button mat-raised-button color="primary" class="right-button" type="button" *ngIf="isgetOtp"  (click)="sendOtp()">Send Again</button>
+          </div>
+          <br>
+          <br>
+          <div *ngIf="openForm">
+            <mat-form-field class="full-width">
+              <mat-label>Password</mat-label>
+              <input matInput placeholder="Enter Password" formControlName="password" type="password">
+              <div class="text-danger" *ngIf="registerForm.get('password')?.hasError('required') && registerForm.get('password')?.touched">
+                Password is required.
+              </div>
+              <div class="text-danger" *ngIf="registerForm.get('password')?.hasError('minlength') && registerForm.get('password')?.touched">
+                Password must be at least 8 characters long.
+              </div>
+            </mat-form-field>
+            <mat-form-field class="full-width">
+              <mat-label>Confirm Password</mat-label>
+              <input matInput placeholder="Confirm Enter Password" id="cnfpass" formControlName="cnfPassword" type="password">
+              <div class="text-danger" *ngIf="registerForm.hasError('mismatch') && registerForm.get('cnfPassword')?.touched">
+                Passwords do not match.
+              </div>
+            </mat-form-field>
+            <div class="row">
+              <div class="col-sm-4">
+                  <button mat-raised-button color="primary" type="submit" [disabled]="registerForm.invalid">Register</button>
+              </div>
+              <div class="col-sm-4">
+                  <button mat-raised-button color="primary" type="button" (click)="cancelPopup()">Cancel</button>
+              </div>
+            </div>
+          </div>
+          
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  

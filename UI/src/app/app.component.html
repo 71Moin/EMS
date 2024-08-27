@@ -1,0 +1,13 @@
+<app-header></app-header>
+<!-- <app-sidebar *ngIf="!( _router.url === '/login' )"></app-sidebar>
+<router-outlet></router-outlet> -->
+<div class="d-flex">
+    <app-sidebar *ngIf="!( _router.url === '/login' )"></app-sidebar>
+    <div class="flex-grow-1">
+      <div class="container mt-3">
+        <router-outlet></router-outlet>
+      </div>
+      <app-footer *ngIf="!( _router.url === '/login' )"></app-footer>
+    </div>
+</div>
+  

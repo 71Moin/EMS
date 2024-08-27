@@ -1,0 +1,121 @@
+<main id="main" class="main">
+    <div class="pagetitle list_bread_btn">
+        <nav>
+            <ol class="breadcrumb list_brd">
+                <li class="breadcrumb-item active">Employee</li>
+                <li class="breadcrumb-item active">view</li>
+            </ol>
+        </nav>
+    </div>
+    <section class="section">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="card_header_main_list">
+                            <div class="row d_align_center">
+                                <div class="col-sm-4">
+                                    <h2 class="maintitlecard">
+                                        <span class="nav-label ng-binding">Details of Employee</span>
+                                    </h2>
+                                </div>
+                            </div>
+                        </div>
+                        <form [formGroup]="detailsEmpForm">
+                            <div class="row mb-3">
+                                <div class="col-sm-6">
+                                    <label for="firstName" class="form-label">First Name:</label>
+                                    <input type="text" class="form-control" formControlName="firstName" readonly>
+                                </div>
+                                <div class="col-sm-6">
+                                    <label for="lastName" class="form-label">Last Name:</label>
+                                    <input type="text" class="form-control" formControlName="lastName" readonly>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-sm-6">
+                                    <label for="dob" class="form-label">Date of Birth:</label>
+                                    <input type="text" class="form-control" formControlName="dob" readonly>
+                                </div>
+                                <div class="col-sm-6">
+                                    <label for="gender" class="form-label">Gender:</label>
+                                    <input type="text" class="form-control" formControlName="gender" readonly>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-sm-6">
+                                    <label for="phnNumber" class="form-label">Contact Number:</label>
+                                    <input type="text" class="form-control" formControlName="phnNumber" readonly>
+                                </div>
+                                <div class="col-sm-6">
+                                    <label for="email" class="form-label">Email:</label>
+                                    <input type="text" class="form-control" formControlName="email" readonly>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-sm-6">
+                                    <label for="hireDate" class="form-label">Hire Date:</label>
+                                    <input type="text" class="form-control" formControlName="hireDate" readonly>
+                                </div>
+                                <div class="col-sm-6">
+                                    <label for="jobTitle" class="form-label">Designation:</label>
+                                    <input type="text" class="form-control" formControlName="jobTitle" readonly>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-sm-6">
+                                    <label for="salary" class="form-label">Salary:</label>
+                                    <input type="text" class="form-control" formControlName="salary" readonly>
+                                </div>
+                                <div class="col-sm-6">
+                                    <label for="emergencyContactName" class="form-label">Emergency Contact
+                                        Name:</label>
+                                    <input type="text" class="form-control" formControlName="emergencyContactName"
+                                        readonly>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-sm-6">
+                                    <label for="emergencyContactRelationship" class="form-label">Emergency Contact
+                                        Relation:</label>
+                                    <input type="text" class="form-control"
+                                        formControlName="emergencyContactRelationship" readonly>
+                                </div>
+                                <div class="col-sm-6">
+                                    <label for="emergencyContactPhoneNumber" class="form-label">Emergency Contact
+                                        Number:</label>
+                                    <input type="text" class="form-control"
+                                        formControlName="emergencyContactPhoneNumber" readonly>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-sm-6">
+                                    <label for="departmentName" class="form-label">Department</label>
+                                    <select formControlName="departmentName" class="form-control readonly-select" >
+                                        <option value="">--Select--</option>
+                                        <option *ngFor="let department of departments" [value]="department.id">{{ department.departmentName }}</option>
+                                    </select>
+                                </div>
+                                <div class="col-sm-6">
+                                    <label for="assignedManager" class="form-label">Report To</label>
+                                    <select formControlName="assignedManager" class="form-control readonly-select">
+                                        <option value="">--Select--</option>
+                                      <option *ngFor="let manager of managers" [value]="manager.id">{{ manager.managerName }}</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-sm-4"></div>
+                                <div class="col-sm-4">
+                                    <button (click)="onCancel()" class="btn btn-secondary w-100" type="button">
+                                        Cancel
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>

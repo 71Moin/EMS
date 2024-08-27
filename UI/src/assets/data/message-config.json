@@ -1,0 +1,964 @@
+[
+    {
+     "Field Position": "H000",
+     "Field Name": "Header 0",
+     "Length Type": "fixed 0",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "H001",
+     "Field Name": "Header 1",
+     "Length Type": "fixed 0",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "H002",
+     "Field Name": "Header 2",
+     "Length Type": "fixed 0",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F000",
+     "Field Name": "Message Type",
+     "Length Type": "fixed 4",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F001",
+     "Field Name": "Bitmap",
+     "Length Type": "bitmap",
+     "Data Type": "binary",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F002",
+     "Field Name": "Primary account number (PAN)",
+     "Length Type": "llvar 16",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F003",
+     "Field Name": "Processing code",
+     "Length Type": "fixed 6",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F004",
+     "Field Name": "Amount, transaction",
+     "Length Type": "fixed 12",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F005",
+     "Field Name": "Amount, settlement",
+     "Length Type": "fixed 12",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F006",
+     "Field Name": "Amount, cardholder billing",
+     "Length Type": "fixed 12",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F007",
+     "Field Name": "Transmission date & time",
+     "Length Type": "fixed 10",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F008",
+     "Field Name": "Amount, cardholder billing fee",
+     "Length Type": "fixed 8",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F009",
+     "Field Name": "Conversion rate, settlement",
+     "Length Type": "fixed 8",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F010",
+     "Field Name": "Conversion rate, cardholder billing",
+     "Length Type": "fixed 8",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F011",
+     "Field Name": "System trace audit number (STAN)",
+     "Length Type": "fixed 6",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F012",
+     "Field Name": "Time, local transaction (hhmmss)",
+     "Length Type": "fixed 6",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F013",
+     "Field Name": "Date, local transaction (MMDD)",
+     "Length Type": "fixed 4",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F014",
+     "Field Name": "Date, expiration",
+     "Length Type": "fixed 4",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F015",
+     "Field Name": "Date, settlement",
+     "Length Type": "fixed 4",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F016",
+     "Field Name": "Date, conversion",
+     "Length Type": "fixed 4",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F017",
+     "Field Name": "Date, capture",
+     "Length Type": "fixed 4",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F018",
+     "Field Name": "Merchant type\/Merchant Category Code",
+     "Length Type": "fixed 4",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F019",
+     "Field Name": "Acquiring institution country code",
+     "Length Type": "fixed 3",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F020",
+     "Field Name": "PAN extended, country code",
+     "Length Type": "fixed 3",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F021",
+     "Field Name": "Forwarding institution. country code",
+     "Length Type": "fixed 3",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F022",
+     "Field Name": "Point of service entry mode",
+     "Length Type": "fixed 3",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F023",
+     "Field Name": "Application PAN sequence number",
+     "Length Type": "fixed 3",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F024",
+     "Field Name": "Function code (ISO 8583:1993)\/Network International identifier (NII)",
+     "Length Type": "fixed 3",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F025",
+     "Field Name": "Point of service condition code",
+     "Length Type": "fixed 2",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F026",
+     "Field Name": "Point of service capture code",
+     "Length Type": "fixed 2",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F027",
+     "Field Name": "Authorizing identification response lengthType",
+     "Length Type": "fixed 1",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F028",
+     "Field Name": "Amount, transaction fee",
+     "Length Type": "fixed 8",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F029",
+     "Field Name": "Amount, settlement fee",
+     "Length Type": "fixed 8",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F030",
+     "Field Name": "Amount, transaction processing fee",
+     "Length Type": "fixed 8",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F031",
+     "Field Name": "Amount, settlement processing fee",
+     "Length Type": "fixed 8",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F032",
+     "Field Name": "Acquiring institution identification code",
+     "Length Type": "llvar",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F033",
+     "Field Name": "Forwarding institution identification code",
+     "Length Type": "llvar",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F034",
+     "Field Name": "Primary account number, extended",
+     "Length Type": "llvar",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F035",
+     "Field Name": "Track 2 data",
+     "Length Type": "llvar",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F036",
+     "Field Name": "Track 3 data",
+     "Length Type": "lllvar",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F037",
+     "Field Name": "Retrieval reference number",
+     "Length Type": "fixed 12",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F038",
+     "Field Name": "Authorization identification response",
+     "Length Type": "fixed 6",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F039",
+     "Field Name": "Response code",
+     "Length Type": "fixed 2",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F040",
+     "Field Name": "Service restriction code",
+     "Length Type": "fixed 3",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F041",
+     "Field Name": "Card acceptor terminal identification",
+     "Length Type": "fixed 8",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F042",
+     "Field Name": "Card acceptor identification code",
+     "Length Type": "fixed 15",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F043",
+     "Field Name": "Card acceptor fieldName\/location",
+     "Length Type": "fixed 40",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F044",
+     "Field Name": "Additional response data",
+     "Length Type": "llvar",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F045",
+     "Field Name": "Track 1 data",
+     "Length Type": "llvar",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F046",
+     "Field Name": "Additional data - ISO",
+     "Length Type": "lllvar",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F047",
+     "Field Name": "Additional data - national",
+     "Length Type": "lllvar",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F048",
+     "Field Name": "Additional data - private",
+     "Length Type": "lllvar",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F049",
+     "Field Name": "Currency code, transaction",
+     "Length Type": "fixed 3",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F050",
+     "Field Name": "Currency code, settlement",
+     "Length Type": "fixed 3",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F051",
+     "Field Name": "Currency code, cardholder billing",
+     "Length Type": "fixed 3",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F052",
+     "Field Name": "Personal identification number data",
+     "Length Type": "binary 8",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F053",
+     "Field Name": "Security related control indataTypeion",
+     "Length Type": "fixed 16",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F054",
+     "Field Name": "Additional amounts",
+     "Length Type": "lllvar",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F055",
+     "Field Name": "ICC Data - EMV having multiple tags",
+     "Length Type": "lllvar",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F056",
+     "Field Name": "Reserved ISO",
+     "Length Type": "lllvar",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F057",
+     "Field Name": "Reserved national",
+     "Length Type": "lllvar",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F058",
+     "Field Name": "Reserved national",
+     "Length Type": "lllvar",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F059",
+     "Field Name": "Reserved national",
+     "Length Type": "lllvar",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F060",
+     "Field Name": "Reserved national",
+     "Length Type": "lllvar",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F061",
+     "Field Name": "Reserved private (Ex: CVV2\/Service Code)",
+     "Length Type": "lllvar",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F062",
+     "Field Name": "Reserved private (Invoice Number, TPK Key)",
+     "Length Type": "lllvar",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F063",
+     "Field Name": "Reserved private",
+     "Length Type": "lllvar",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F064",
+     "Field Name": "Message authentication code (MAC)",
+     "Length Type": "binary 8",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F065",
+     "Field Name": "Bitmap, extended",
+     "Length Type": "binary 8",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F066",
+     "Field Name": "Settlement code",
+     "Length Type": "fixed 1",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F067",
+     "Field Name": "Extended payment code",
+     "Length Type": "fixed 2",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F068",
+     "Field Name": "Receiving institution country code",
+     "Length Type": "fixed 3",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F069",
+     "Field Name": "Settlement institution country code",
+     "Length Type": "fixed 3",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F070",
+     "Field Name": "Network management indataTypeion code",
+     "Length Type": "fixed 3",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F071",
+     "Field Name": "Message number",
+     "Length Type": "fixed 4",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F072",
+     "Field Name": "Message number, last",
+     "Length Type": "fixed 4",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F073",
+     "Field Name": "Date, action (YYMMDD)",
+     "Length Type": "fixed 6",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F074",
+     "Field Name": "Credits, number",
+     "Length Type": "fixed 10",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F075",
+     "Field Name": "Credits, reversal number",
+     "Length Type": "fixed 10",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F076",
+     "Field Name": "Debits, number",
+     "Length Type": "fixed 10",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F077",
+     "Field Name": "Debits, reversal number",
+     "Length Type": "fixed 10",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F078",
+     "Field Name": "Transfer number",
+     "Length Type": "fixed 10",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F079",
+     "Field Name": "Transfer, reversal number",
+     "Length Type": "fixed 10",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F080",
+     "Field Name": "Inquiries number",
+     "Length Type": "fixed 10",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F081",
+     "Field Name": "Authorizations, number",
+     "Length Type": "fixed 10",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F082",
+     "Field Name": "Credits, processing fee amount",
+     "Length Type": "fixed 12",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F083",
+     "Field Name": "Credits, transaction fee amount",
+     "Length Type": "fixed 12",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F084",
+     "Field Name": "Debits, processing fee amount",
+     "Length Type": "fixed 12",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F085",
+     "Field Name": "Debits, transaction fee amount",
+     "Length Type": "fixed 12",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F086",
+     "Field Name": "Credits, amount",
+     "Length Type": "fixed 16",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F087",
+     "Field Name": "Credits, reversal amount",
+     "Length Type": "fixed 16",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F088",
+     "Field Name": "Debits, amount",
+     "Length Type": "fixed 16",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F089",
+     "Field Name": "Debits, reversal amount",
+     "Length Type": "fixed 16",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F090",
+     "Field Name": "Original data elements",
+     "Length Type": "fixed 42",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F091",
+     "Field Name": "File update code",
+     "Length Type": "fixed 1",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F092",
+     "Field Name": "File security code",
+     "Length Type": "fixed 2",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F093",
+     "Field Name": "Response indicator",
+     "Length Type": "fixed 5",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F094",
+     "Field Name": "Service indicator",
+     "Length Type": "fixed 7",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F095",
+     "Field Name": "Replacement amounts",
+     "Length Type": "fixed 42",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F096",
+     "Field Name": "Message security code",
+     "Length Type": "binary 8",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F097",
+     "Field Name": "Amount, net settlement",
+     "Length Type": "fixed 17",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F098",
+     "Field Name": "Payee",
+     "Length Type": "fixed 25",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F099",
+     "Field Name": "Settlement institution identification code",
+     "Length Type": "llvar",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F100",
+     "Field Name": "Receiving institution identification code",
+     "Length Type": "llvar",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F101",
+     "Field Name": "File fieldName",
+     "Length Type": "llvar",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F102",
+     "Field Name": "Account identification 1",
+     "Length Type": "llvar",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F103",
+     "Field Name": "Account identification 2",
+     "Length Type": "llvar",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F104",
+     "Field Name": "Transaction description",
+     "Length Type": "lllvar",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F105",
+     "Field Name": "Reserved for ISO use",
+     "Length Type": "lllvar",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F106",
+     "Field Name": "Reserved for ISO use",
+     "Length Type": "lllvar",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F107",
+     "Field Name": "Reserved for ISO use",
+     "Length Type": "lllvar",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F108",
+     "Field Name": "Reserved for ISO use",
+     "Length Type": "lllvar",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F109",
+     "Field Name": "Reserved for ISO use",
+     "Length Type": "lllvar",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F110",
+     "Field Name": "Reserved for ISO use",
+     "Length Type": "lllvar",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F111",
+     "Field Name": "Reserved for ISO use",
+     "Length Type": "lllvar",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F112",
+     "Field Name": "Reserved for national use",
+     "Length Type": "lllvar",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F113",
+     "Field Name": "Reserved for national use",
+     "Length Type": "lllvar",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F114",
+     "Field Name": "Reserved for national use",
+     "Length Type": "lllvar",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    {
+     "Field Position": "F115",
+     "Field Name": "Reserved for national use",
+     "Length Type": "lllvar",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    },
+    
+    {
+     "Field Position": "F116",
+     "Field Name": "Reserved for national use",
+     "Length Type": "lllvar",
+     "Data Type": "ascii",
+     "Alignment": "left",
+     "Filler": "0"
+    }
+]
+   

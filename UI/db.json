@@ -1,0 +1,59 @@
+{
+  "employee": [
+    {
+      "id": "2bba",
+      "firstName": "wertyuio",
+      "lastName": "fkskbsk",
+      "dob": "2024-02-16",
+      "gender": "M",
+      "phnNumber": "08798003456",
+      "email": "priti.kumari@paynways.com",
+      "hireDate": "2024-02-15",
+      "jobTitle": "Backend Developer",
+      "departmentId": "",
+      "addressId": "",
+      "salary": 45678,
+      "managerId": "",
+      "empStatus": "",
+      "emergencyContactName": "",
+      "emergencyContactRelationship": "",
+      "emergencyContactPhoneNumber": "",
+      "imageFile": ""
+    },
+    {
+      "id": "d7df",
+      "firstName": "Nurul",
+      "lastName": "Islam",
+      "dob": "1998-08-16",
+      "gender": "M",
+      "phnNumber": "09801502290",
+      "email": "nurul.islam@paynways.com",
+      "hireDate": "2024-02-15",
+      "jobTitle": "Frontend Developer",
+      "departmentId": "f4c3",
+      "addressId": "",
+      "salary": 34567,
+      "managerId": "a567",
+      "empStatus": "A",
+      "emergencyContactName": "asdfghjk",
+      "emergencyContactRelationship": "Spouse",
+      "emergencyContactPhoneNumber": "12345678",
+      "imageFile": ""
+    }
+  ],
+  "department": [
+    {
+      "id": "f4c3",
+      "departmentName": "IT",
+      "location": "Noida"
+    }
+  ],
+  "manager": [
+    {
+      "id": "a567",
+      "managerName": "Naseem",
+      "email": "naseemkhan@gmail.com",
+      "phoneNumber": "12345678"
+    }
+  ]
+}

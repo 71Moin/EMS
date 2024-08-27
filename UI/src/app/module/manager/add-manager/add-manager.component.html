@@ -1,0 +1,82 @@
+<main id="main" class="main">
+    <div class="pagetitle list_bread_btn">
+        <nav>
+            <ol class="breadcrumb list_brd">
+                <li class="breadcrumb-item active">Manager</li>
+                <li class="breadcrumb-item active">Add</li>
+            </ol>
+        </nav>
+    </div>
+    <section class="section">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="card_header_main_list">
+                            <div class="row d_align_center">
+                                <div class="col-sm-4">
+                                    <h2 class="maintitlecard">
+                                        <span class="nav-label ng-binding">Add New Manager</span>
+                                    </h2>
+                                </div>
+                            </div>
+                        </div>
+                        <form [formGroup]="addMngrForm" (ngSubmit)="onSubmit()">
+                            <div class="row mb-3">
+                                <div class="col-sm-6">
+                                    <label for="managerName" class="form-label">Manager Name:</label>
+                                    <input type="text" class="form-control" formControlName="managerName" placeholder="Enter Manager Name">
+                                    <div class="text-danger">
+                                        <small *ngIf="addMngrForm.get('managerName')?.hasError('required') && addMngrForm.get('managerName')?.touched">
+                                            Manager Name is required.
+                                        </small>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <label for="phoneNumber" class="form-label">Contact Number:</label>
+                                    <input type="text" class="form-control" formControlName="phoneNumber" placeholder="Enter Contact Number">
+                                    <div class="text-danger">
+                                        <small *ngIf="addMngrForm.get('phoneNumber')?.hasError('required') && addMngrForm.get('phoneNumber')?.touched">
+                                            Contact Number is required.
+                                        </small>
+                                        <small *ngIf="addMngrForm.get('phoneNumber')?.hasError('maxlength') && addMngrForm.get('phoneNumber')?.touched">
+                                            Maximum Length Must Be 10 Digit.
+                                        </small>
+                                        <small *ngIf="addMngrForm.get('phoneNumber')?.hasError('minlength') && addMngrForm.get('phoneNumber')?.touched">
+                                            Minimum Length Must Be 10 Digit.
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-sm-6">
+                                    <label for="email" class="form-label">Email:</label>
+                                    <input type="email" class="form-control" formControlName="email" placeholder="Enter Email">
+                                    <div class="text-danger">
+                                        <small *ngIf="addMngrForm.get('email')?.hasError('required') && addMngrForm.get('email')?.touched">
+                                            Email is required.
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="row mb-3">
+                                <div class="col-sm-4"></div>
+                                <div class="col-sm-4">
+                                    <button class="btn btn-primary w-100" type="submit">
+                                        Submit
+                                    </button>
+                                </div>
+                                <div class="col-sm-4">
+                                    <button (click)="onCancel()" class="btn btn-secondary w-100" type="button">
+                                        Cancel
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>

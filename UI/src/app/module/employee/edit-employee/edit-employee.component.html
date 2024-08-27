@@ -1,0 +1,207 @@
+<main id="main" class="main">
+    <div class="pagetitle list_bread_btn">
+        <nav>
+            <ol class="breadcrumb list_brd">
+                <li class="breadcrumb-item active">Employee</li>
+                <li class="breadcrumb-item active">Edit</li>
+            </ol>
+        </nav>
+    </div>
+    <section class="section">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="card_header_main_list">
+                            <div class="row d_align_center">
+                                <div class="col-sm-4">
+                                    <h2 class="maintitlecard">
+                                        <span class="nav-label ng-binding">Update Employee</span>
+                                    </h2>
+                                </div>
+                            </div>
+                        </div>
+                        <form [formGroup]="editEmpForm" (ngSubmit)="onSubmit()">
+                            <div class="row mb-3">
+                                <div class="col-sm-6">
+                                    <label for="firstName" class="form-label"> <span class="estric">*</span> First Name:</label>
+                                    <input type="text" class="form-control" formControlName="firstName" placeholder="Enter First Name">
+                                    <div class="text-danger">
+                                        <small *ngIf="editEmpForm.get('firstName')?.hasError('required') && editEmpForm.get('firstName')?.touched">
+                                            First Name is required.
+                                        </small>
+                                        <small *ngIf="editEmpForm.get('firstName')?.hasError('maxlength') && editEmpForm.get('firstName')?.touched">
+                                            First Name Can Not be More Than 50 Character.
+                                        </small>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <label for="lastName" class="form-label"><span class="estric">*</span> Last Name:</label>
+                                    <input type="text" class="form-control" formControlName="lastName" placeholder="Enter Last Name">
+                                    <div class="text-danger">
+                                        <small *ngIf="editEmpForm.get('lastName')?.hasError('required') && editEmpForm.get('lastName')?.touched">
+                                            Last Name is required.
+                                        </small>
+                                        <small *ngIf="editEmpForm.get('lastName')?.hasError('maxlength') && editEmpForm.get('lastName')?.touched">
+                                            Last Name Can Not be More Than 50 Character.
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-sm-6">
+                                    <label for="dob" class="form-label"><span class="estric">*</span> Date of Birth:</label>
+                                    <input type="date" class="form-control" formControlName="dob" placeholder="YYYY/MM/DD">
+                                    <div class="text-danger">
+                                        <small *ngIf="editEmpForm.get('dob')?.hasError('required') && editEmpForm.get('dob')?.touched">
+                                            Date of Birth is required.
+                                        </small>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <label for="gender" class="form-label"><span class="estric">*</span> Gender:</label>
+                                    <select formControlName="gender" class="form-control">
+                                        <option value="">--Select--</option>
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
+                                        <option value="Other">Other</option>
+                                      </select>
+                                    <div class="text-danger">
+                                        <small *ngIf="editEmpForm.get('gender')?.hasError('required') && editEmpForm.get('gender')?.touched">
+                                            Gender is required.
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-sm-6">
+                                    <label for="phnNumber" class="form-label"><span class="estric">*</span> Contact Number:</label>
+                                    <input type="text" class="form-control" formControlName="phnNumber" appNumber10DigitOnly placeholder="Enter Contact Number">
+                                    <div class="text-danger">
+                                        <small *ngIf="editEmpForm.get('phnNumber')?.hasError('required') && editEmpForm.get('phnNumber')?.touched">
+                                            Contact Number is required.
+                                        </small>
+                                        <small *ngIf="editEmpForm.get('phnNumber')?.hasError('maxlength') && editEmpForm.get('phnNumber')?.touched">
+                                            Contact Number Can Not be More Than 10 Character.
+                                        </small>
+                                        <small *ngIf="editEmpForm.get('phnNumber')?.hasError('minlength') && editEmpForm.get('phnNumber')?.touched">
+                                            Contact Number Can Not be Less Than 10 Character.
+                                        </small>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <label for="email" class="form-label"><span class="estric">*</span> Email:</label>
+                                    <input type="email" class="form-control" formControlName="email" placeholder="Enter Email">
+                                    <div class="text-danger">
+                                        <small *ngIf="editEmpForm.get('email')?.hasError('required') && editEmpForm.get('email')?.touched">
+                                            Email is required.
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-sm-6">
+                                    <label for="hireDate" class="form-label"><span class="estric">*</span> Hire Date:</label>
+                                    <input type="date" class="form-control" formControlName="hireDate" placeholder="YYYY-MM-DD">
+                                    <div class="text-danger">
+                                        <small *ngIf="editEmpForm.get('hireDate')?.hasError('required') && editEmpForm.get('hireDate')?.touched">
+                                            Hire Date is required.
+                                        </small>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <label for="jobTitle" class="form-label"><span class="estric">*</span> Designation:</label>
+                                    <input type="text" class="form-control" formControlName="jobTitle" placeholder="Enter Designation">
+                                    <div class="text-danger">
+                                        <small *ngIf="editEmpForm.get('jobTitle')?.hasError('required') && editEmpForm.get('jobTitle')?.touched">
+                                            Designation is required.
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-sm-6">
+                                    <label for="salary" class="form-label"><span class="estric">*</span> Salary:</label>
+                                    <input type="text" class="form-control" formControlName="salary" placeholder="Enter Salary">
+                                    <div class="text-danger">
+                                        <small *ngIf="editEmpForm.get('salary')?.hasError('required') && editEmpForm.get('salary')?.touched">
+                                            Salary is required.
+                                        </small>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <label for="emergencyContactName" class="form-label">Emergency Contact Name:</label>
+                                    <input type="text" class="form-control" formControlName="emergencyContactName" placeholder="Enter Emergency Contact Name">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-sm-6">
+                                    <label for="emergencyContactRelationship" class="form-label">Emergency Contact Relation:</label>
+                                    <select formControlName="emergencyContactRelationship" class="form-control">
+                                        <option value="">--Select--</option>
+                                        <option value="Father">Father</option>
+                                        <option value="Mother">Mother</option>
+                                        <option value="Brother">Brother</option>
+                                        <option value="Spouse">Spouse</option>
+                                    </select>
+                                </div>
+                                <div class="col-sm-6">
+                                    <label for="emergencyContactPhoneNumber" class="form-label"><span class="estric">*</span> Emergency Contact Number:</label>
+                                    <input type="text" class="form-control" formControlName="emergencyContactPhoneNumber" placeholder="Emergency Contact Number">
+                                    <div class="text-danger">
+                                        <small *ngIf="editEmpForm.get('emergencyContactPhoneNumber')?.hasError('required') && editEmpForm.get('emergencyContactPhoneNumber')?.touched">
+                                            Emergency Contact Number is required.
+                                        </small>
+                                        <small *ngIf="editEmpForm.get('emergencyContactPhoneNumber')?.hasError('maxlength') && editEmpForm.get('emergencyContactPhoneNumber')?.touched">
+                                            Maximum Length Must be 10 Character
+                                        </small>
+                                        <small *ngIf="editEmpForm.get('emergencyContactPhoneNumber')?.hasError('minlength') && editEmpForm.get('emergencyContactPhoneNumber')?.touched">
+                                            Minimum Length Must be 10 Character
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-sm-6">
+                                    <label for="departmentName" class="form-label"><span class="estric">*</span> Department</label>
+                                    <select formControlName="departmentName" class="form-control">
+                                        <option value="">--Select--</option>
+                                        <option *ngFor="let department of departments" [value]="department.id">{{ department.departmentName }}</option>
+                                    </select>
+                                    <div class="text-danger">
+                                        <small *ngIf="editEmpForm.get('departmentName')?.hasError('required') && editEmpForm.get('departmentName')?.touched">
+                                            Department is required.
+                                        </small>
+                                        <small *ngIf="!departments && departments.Length===0">
+                                            Firstly Add Department
+                                        </small>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <label for="assignedManager" class="form-label">Report To</label>
+                                    <select formControlName="assignedManager" class="form-control">
+                                        <option value="">--Select--</option>
+                                      <option *ngFor="let manager of managers" [value]="manager.id">{{ manager.managerName }}</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-sm-4"></div>
+                                <div class="col-sm-4">
+                                    <button class="btn btn-primary w-100" type="submit">
+                                        Submit
+                                    </button>
+                                </div>
+                                <div class="col-sm-4">
+                                    <button (click)="onCancel()" class="btn btn-secondary w-100" type="button">
+                                        Cancel
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
